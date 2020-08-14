@@ -9,7 +9,7 @@ import { IndexDBService } from './services/index-db.service';
 })
 export class WeatherService {
   public apiURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
-  public appID = '&appid=4d54b7ce54236f8a4be07c0a15e5ca97';
+  public appID = '&appid=addkey';
   public unit = 'metric';
   public notificationUrl = 'http://localhost:3000/subscribe';
   private readonly dataSaveUrl = 'http://localhost:3000/weather';
