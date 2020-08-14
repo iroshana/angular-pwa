@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card" style="width: 32rem;">
+      <div class="card-body">
+        <h5 class="card-title">Search for Weather v 3.0</h5>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Location</label>
+        <input
+          type="text"
+          class="form-control"
+          id="location"
+          aria-describedby="location"
+          [(ngModel)]="location"
+        />
+      </div>
+      <div class="card-body">
+        <button class="btn btn-success" (click)="loadWeather()">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card" style="width: 32rem;" *ngIf="showResult">
+      <img
+        src="{{ weatherico }}"
+        class="card-img-top"
+        alt="weatherico"
+        height="500"
+        width="500"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ city }}, {{ country }}</h5>
+        <p class="card-text">
+          {{ desc }}
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ temp }}&deg;</li>
+      </ul>
+      <div class="card-body">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-primary" (click)="clearData()">
+            Clear
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="subscribeToNotification()"
+          >
+            Subscribe to notification
+          </button>
+          <button
+            class="btn btn-success"
+            type="button"
+            (click)="saveWeatherData()"
+          >
+            Save Data
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
